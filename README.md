@@ -7,13 +7,13 @@ A data plugin to read and parse JSON data.
 1. Create a new file in `/data` with the name `json.ts`.
 
 ```ts
-import * as json from "https://raw.githubusercontent.com/use-seedling/seedling-data-plugin-json/master/mod.ts";
+import json from "https://raw.githubusercontent.com/use-seedling/seedling-data-plugin-json/master/mod.ts";
 export default json;
 ```
 
 2. Use with seedling data directive. There are three ways to use the directive.
 
-### As raw JSON
+### As raw inline JSON
 
 ```html
   <:data use="json">

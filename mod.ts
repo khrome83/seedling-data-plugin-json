@@ -5,8 +5,8 @@ import {
 import { join } from "https://deno.land/std@0.64.0/path/mod.ts";
 
 interface JSONFiles {
-  file?: string,
-  url?: string,
+  file?: string;
+  url?: string;
 }
 
 export default async (request: Request, response: Response) => {
@@ -17,9 +17,11 @@ export default async (request: Request, response: Response) => {
     try {
       return response.success(JSON.parse(body));
     } catch (e) {
-      return response.error('Unable to parse JSON in body of Data Directive', e);
+      return response.error(
+        "Unable to parse JSON in body of Data Directive",
+        e,
+      );
     }
-    
   } else if (file !== undefined) {
     const path = join(request.root, file);
     try {
@@ -35,18 +37,21 @@ export default async (request: Request, response: Response) => {
       if (!result.ok) {
         if (result.status >= 500) {
           return response.retry(
-            "Unexpected error, backing off and then trying again"
+            "Unexpected error, backing off and then trying again",
           );
         } else if (result.status >= 400 && result.status < 500) {
           return response.error("Network issue, request failed");
         }
       }
       const output = await result.json();
-      return response.success(output.data);
+      return response.success(output);
     } catch (e) {
+      console.log(e);
       return response.error("Something went wrong", e);
     }
   } else {
-    return response.error("No valid methods provided for JSON in Data Directive");
+    return response.error(
+      "No valid methods provided for JSON in Data Directive",
+    );
   }
 };
