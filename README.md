@@ -1,4 +1,4 @@
-# seedling-data-plugin-graphcms
+# seedling-data-plugin-json
 
 A data plugin to read and parse JSON data.
 
