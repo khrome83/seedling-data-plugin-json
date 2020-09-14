@@ -1,6 +1,6 @@
 import {
   assertEquals,
-} from "https://deno.land/std@0.67.0/testing/asserts.ts";
+} from "https://deno.land/std@0.69.0/testing/asserts.ts";
 import { denock } from "https://deno.land/x/denock@0.2.0/mod.ts";
 import json from "./mod.ts";
 
