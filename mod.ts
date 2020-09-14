@@ -1,8 +1,8 @@
-import {
+import type {
   Request,
   Response,
 } from "https://raw.githubusercontent.com/use-seedling/seedling/master/mod.ts";
-import { join } from "https://deno.land/std@0.67.0/path/mod.ts";
+import { join } from "https://deno.land/std@0.69.0/path/mod.ts";
 
 interface JSONFiles {
   file?: string;
