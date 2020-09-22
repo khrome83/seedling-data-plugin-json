@@ -7,7 +7,7 @@ A data plugin to read and parse JSON data.
 1. Create a new file in `/data` with the name `json.ts`.
 
 ```ts
-import json from "https://deno.land/x/seedling-data-plugin-json/mod.ts";
+import json from "https://deno.land/x/seedling_data_plugin_json@0.0.1/mod.ts";
 export default json;
 ```
 
